@@ -27,9 +27,9 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->brandName('Test Fillament')
+            ->brandName(config("app.name"))
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Green,
             ])
             ->darkMode(false)
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')

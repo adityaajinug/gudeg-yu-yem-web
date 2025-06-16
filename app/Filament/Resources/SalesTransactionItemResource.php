@@ -2,24 +2,20 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CustomerResource\Pages;
-use App\Filament\Resources\CustomerResource\RelationManagers;
-use App\Models\Customer;
+use App\Filament\Resources\SalesTransactionItemResource\Pages;
+use App\Filament\Resources\SalesTransactionItemResource\RelationManagers;
+use App\Models\SalesTransactionItem;
 use Filament\Forms;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
-use Filament\Tables\Filters\TextFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class CustomerResource extends Resource
+class SalesTransactionItemResource extends Resource
 {
-    protected static ?string $model = Customer::class;
+    protected static ?string $model = SalesTransactionItem::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -27,9 +23,7 @@ class CustomerResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name')->required(),
-                TextInput::make('email')->email()->required(),
-                TextInput::make('phone')->required(),
+                //
             ]);
     }
 
@@ -37,18 +31,11 @@ class CustomerResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')
-                    ->searchable()
-                    ->sortable(),
-                TextColumn::make('email')
-                    ->searchable()
-                    ->sortable(),
-                TextColumn::make('phone')
-                    ->searchable()
-                    ->sortable(),
-
+                //
             ])
-            ->filters([])
+            ->filters([
+                //
+            ])
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
@@ -74,9 +61,9 @@ class CustomerResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCustomers::route('/'),
-            'create' => Pages\CreateCustomer::route('/create'),
-            'edit' => Pages\EditCustomer::route('/{record}/edit'),
+            'index' => Pages\ListSalesTransactionItems::route('/'),
+            'create' => Pages\CreateSalesTransactionItem::route('/create'),
+            'edit' => Pages\EditSalesTransactionItem::route('/{record}/edit'),
         ];
     }
 }
