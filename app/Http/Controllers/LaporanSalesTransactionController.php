@@ -14,7 +14,8 @@ class LaporanSalesTransactionController extends Controller
         $end = $request->end_date;
 
         $data = SalesTransaction::with('items.menu')
-            ->whereBetween('transaction_date', [$start, $end])
+            ->whereDate('transaction_date', '>=', $start)
+            ->whereDate('transaction_date', '<=', $end)
             ->get();
 
         $pdf = Pdf::loadView('pdf.laporan-sales', [

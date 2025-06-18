@@ -32,7 +32,7 @@ class MenuResource extends Resource
             TextInput::make('price')->numeric()->required(),
             TextInput::make('discount')->numeric()->default(0),
             FileUpload::make('image_path')
-                ->label('Gambar Menu')
+                ->label('Gambar Menu')  
                 ->image()
                 ->directory('menus')
                 ->disk('public')
