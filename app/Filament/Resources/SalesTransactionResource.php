@@ -26,7 +26,7 @@ class SalesTransactionResource extends Resource
 {
     protected static ?string $model = SalesTransaction::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-banknotes';
 
     public static function form(Form $form): Form
     {
@@ -72,7 +72,7 @@ class SalesTransactionResource extends Resource
         $total = SalesTransaction::sum('total_price');
         $formattedTotal = 'Total: Rp ' . number_format($total, 0, ',', '.');
         return $table
-            ->columns([TextColumn::make('id')->label('No Transaksi')->sortable()->searchable(), TextColumn::make('transaction_date')->label('Tanggal Transaksi')->dateTime('d M Y H:i')->sortable(), TextColumn::make('total_price')->label('Total Harga')->money('IDR', true)->sortable(), TextColumn::make('items_count')->label('Jumlah Item')->counts('items')->sortable()])
+            ->columns([TextColumn::make('id')->label('ID Transaksi')->sortable()->searchable(), TextColumn::make('transaction_date')->label('Tanggal Transaksi')->dateTime('d M Y H:i')->sortable(), TextColumn::make('total_price')->label('Total Harga')->money('IDR', true)->sortable(), TextColumn::make('items_count')->label('Jumlah Item')->counts('items')->sortable()])
             ->filters([
                 // nanti bisa tambahkan filter tanggal, range harga, dsb
             ])

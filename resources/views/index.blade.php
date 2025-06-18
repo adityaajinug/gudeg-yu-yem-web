@@ -26,7 +26,7 @@
     <section id="mainMenu" class="max-w-5xl mx-auto pt-16 px-4">
         <div class="flex justify-between items-start sm:items-center gap-3">
             <h2 class="text-darkteal font-bold text-2xl">Menus</h2>
-            <a href="menu.html" class="bg-darkteal text-white px-4 py-2 rounded-lg text-sm">
+            <a href="{{ route('menu') }}" class="bg-darkteal text-white px-4 py-2 rounded-lg text-sm">
                 Lihat Semua
             </a>
         </div>

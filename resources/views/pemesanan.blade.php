@@ -1,7 +1,7 @@
 @extends('app')
 @section('content')
     <h2 class="font-bold text-darkteal text-2xl uppercase text-center mt-10">
-        Formulir Pemesanan
+        Formulir Pemesanan Besar
     </h2>
 
     <div class="max-w-3xl mx-auto mt-10 px-4 sm:px-6 lg:px-8">
